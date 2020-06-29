@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styled from 'styled-components';
 
 class AddTodo extends Component {
     state = {
@@ -28,9 +29,15 @@ class AddTodo extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="">add new todo: </label>
-                    <input type="text" onChange={this.handleChange} value={this.state.content} />
-                    <button>Submit</button>
+                    <div className="row">
+                        <label>
+                            add new todo:
+                            <input className="validate" id="todo" type="text" onChange={this.handleChange} value={this.state.content} />
+                        </label>
+                    </div>
+                    <div className="row">
+                        <button className="submit-btn">Submit</button>
+                    </div>
                 </form>
             </div>
         );
